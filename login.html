@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    </head>
+<body>
+
+<h1>Login Page</h1>
+<button type="button" onclick="window.location.href='index.html?user=user1'">Login User #1</button>
+<br/>
+<button type="button" onclick="window.location.href='index.html?user=user2'">Login User #2</button>
+<script>
+
+</script>
+<script >
+
+function download() {
+    var client_id = $_GET("user");
+    var link = document.createElement("a");
+    link.download = name;
+    link.href = "/downloadFile/";
+    link.click();
+}
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    </head>
+<body>
+
+<h1>Welcome <span id="user"></span></h1>
+<input id="hash" type="text"/>
+<button type="button" onclick="download()">Download Me!</button>
+ 
+
+<script>
+
+</script>
+<script >
+
+$(document).ready(function () {
+    var client_id = $_GET("user");
+    console.log(client_id);
+    document.getElementById("user").innerHTML = client_id;
+});
+
+var $_GET = function (name) {
+    var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
+    return decodeURIComponent(results[1] || 0);
+}
+
+function download() {
+
+    var user = $_GET("user");
+    var hash = document.getElementById("hash").value;
+
+    var link = document.createElement("a");
+    link.download = name;
+    link.href = "/downloadFile/"+user+"/"+hash;
+    link.click();
+}
+
+</script>
+
+</body>
+</html>
